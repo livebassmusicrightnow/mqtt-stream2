@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/livebassmusicrightnow/mqtt-stream2/issues"
   },
-  "homepage": "https://github.com/livebassmusicrightnow/mqtt-stream2#readme"
+  "homepage": "https://github.com/livebassmusicrightnow/mqtt-stream2#readme",
+  "dependencies": {
+    "mqtt": "^2.0.1"
+  }
 }
