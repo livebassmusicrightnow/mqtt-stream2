@@ -4,7 +4,11 @@
   "description": "Publish/Subscribe to MQTT topics using NodeJS Streams",
   "main": "lib/mqtt-stream2.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:modules && npm run test:coverage",
+    "test:modules": "mocha --recursive --compilers coffee:iced-coffee-script/register --require iced-coffee-coverage/register-istanbul test/",
+    "test:coverage": "istanbul report",
+    "build": "iced --bare --map --runtime node -o lib/ -c src/",
+    "watch": "iced --watch --bare --map --runtime node -o lib/ -c src/"
   },
   "repository": {
     "type": "git",
@@ -28,5 +32,14 @@
   "homepage": "https://github.com/livebassmusicrightnow/mqtt-stream2#readme",
   "dependencies": {
     "mqtt": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.14",
+    "iced-coffee-coverage": "^1.0.3",
+    "iced-coffee-script": "^108.0.11",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.0",
+    "sinon": "^1.17.6"
   }
 }
