@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/livebassmusicrightnow/mqtt-stream2#readme",
   "dependencies": {
+    "iced-runtime": "^1.0.3",
     "mqtt": "^2.0.1"
   },
   "devDependencies": {
