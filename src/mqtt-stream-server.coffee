@@ -13,24 +13,18 @@ class MQTTStreamServer extends stream.PassThrough
   qos:           1
 
   constructor: (o) ->
+    throw new Error "topic required" unless o.topic
     @[key] = value for key, value of o
     @log "creating"
     super highWaterMark: @highWaterMark
 
-    if @server then @connectMqtt()
-    else
-      @mqttServer or= new MQTTServer
-        readyHandler: @connectMqtt
-        port:         @sourcePort
-        log:          @log
-
-  connectMqtt: =>
-    @server or= "#{@mqttServer.ascoltatore.host}"
+  connectMqtt: (callback = ->) =>
     @server   = "mqtt://#{@server}" unless /mqtt:/.exec @server
     @log "connecting to #{@server}"
     @mqttClient = MQTT.connect @server
-    @mqttClient.on "connect", @subscribe
     @mqttClient.on "error", (args...) => @error args...
+    @mqttClient.on "connect", @subscribe
+    @mqttClient.once "connect", callback
 
   subscribe: =>
     @log "connected"
