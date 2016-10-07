@@ -10,6 +10,11 @@ Publish/Subscribe to MQTT topics using NodeJS Streams
 
 [![NPM][npm-stats]][npm]
 
+## Installation
+```sh
+npm install --save mqtt-stream2
+```
+
 # License
 
 MIT
