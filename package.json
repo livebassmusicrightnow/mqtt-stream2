@@ -1,0 +1,29 @@
+{
+  "name": "mqtt-stream2",
+  "version": "1.0.0",
+  "description": "Publish/Subscribe to MQTT topics using NodeJS Streams",
+  "main": "lib/mqtt-stream2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livebassmusicrightnow/mqtt-stream2.git"
+  },
+  "keywords": [
+    "mqtt",
+    "stream",
+    "streams",
+    "topic",
+    "publish",
+    "subscribe",
+    "pubsub",
+    "mosca"
+  ],
+  "author": "doublerebel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/livebassmusicrightnow/mqtt-stream2/issues"
+  },
+  "homepage": "https://github.com/livebassmusicrightnow/mqtt-stream2#readme"
+}
