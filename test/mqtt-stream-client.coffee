@@ -67,7 +67,7 @@ describe "MQTTStreamClient", ->
       await
         client.connectMqtt defer()
         {mqttClient} = client
-        expect(mqttClient.listenerCount "error").to.equal 1
+        expect(mqttClient.listeners "error").to.have.length 1
         expect(mqttClient.listeners "connect").to.contain client.openValves
 
       done()
